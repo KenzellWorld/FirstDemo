@@ -21,6 +21,8 @@
 		AA44E79218AB28D900155E2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA44E77418AB28D900155E2A /* UIKit.framework */; };
 		AA44E79A18AB28D900155E2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA44E79818AB28D900155E2A /* InfoPlist.strings */; };
 		AA44E79C18AB28D900155E2A /* FirstDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA44E79B18AB28D900155E2A /* FirstDemoTests.m */; };
+		AA44E7A818ADC79A00155E2A /* PSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = AA44E7A718ADC79A00155E2A /* PSCourse.m */; };
+		AA44E7C518BD8D9400155E2A /* PSCourseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA44E7C418BD8D9400155E2A /* PSCourseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		AA44E79718AB28D900155E2A /* FirstDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirstDemoTests-Info.plist"; sourceTree = "<group>"; };
 		AA44E79918AB28D900155E2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA44E79B18AB28D900155E2A /* FirstDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstDemoTests.m; sourceTree = "<group>"; };
+		AA44E7A618ADC79A00155E2A /* PSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCourse.h; sourceTree = "<group>"; };
+		AA44E7A718ADC79A00155E2A /* PSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCourse.m; sourceTree = "<group>"; };
+		AA44E7C318BD8D9400155E2A /* PSCourseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCourseManager.h; sourceTree = "<group>"; };
+		AA44E7C418BD8D9400155E2A /* PSCourseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCourseManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		AA44E76418AB28D900155E2A = {
 			isa = PBXGroup;
 			children = (
+				AA44E7A518ADC76700155E2A /* Models */,
 				AA44E77618AB28D900155E2A /* FirstDemo */,
 				AA44E79518AB28D900155E2A /* FirstDemoTests */,
 				AA44E76F18AB28D900155E2A /* Frameworks */,
@@ -150,6 +157,17 @@
 				AA44E79818AB28D900155E2A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA44E7A518ADC76700155E2A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA44E7A618ADC79A00155E2A /* PSCourse.h */,
+				AA44E7A718ADC79A00155E2A /* PSCourse.m */,
+				AA44E7C318BD8D9400155E2A /* PSCourseManager.h */,
+				AA44E7C418BD8D9400155E2A /* PSCourseManager.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA44E78718AB28D900155E2A /* ViewController.m in Sources */,
+				AA44E7A818ADC79A00155E2A /* PSCourse.m in Sources */,
 				AA44E78118AB28D900155E2A /* AppDelegate.m in Sources */,
 				AA44E77D18AB28D900155E2A /* main.m in Sources */,
+				AA44E7C518BD8D9400155E2A /* PSCourseManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,12 +7,42 @@
 //
 
 #import "AppDelegate.h"
+#import "PSCourse.h"
+#import "PSCourseManager.h"
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSDictionary* data;
+    data = @{@"courseID":@"42",@"coursePrice":@"29.99",@"courseDate":@"04/1/2014"};
+    NSArray* courses = @[data, [data copy], [data copy], [data copy]];
+    NSMutableArray* objectCourses = [[NSMutableArray alloc] initWithCapacity:courses.count];
+    for (NSDictionary* course in courses) {
+        PSCourse* course2 = [PSCourse initFromDictionary:course];
+        [objectCourses addObject:course2];
+    }
+    PSCourse* course2 = [PSCourse initFromDictionary:data];
+    
+    // bi-directional loosely coupled communication
+    // much more common - all over UIKit and Foundation
+    PSCourse* course = [[PSCourse alloc] init];
+    NSInteger i = 42;
+    course.courseID = [NSNumber numberWithInteger:i];
+    course.courseDate = [NSDate date];
+    course.coursePrice = [NSDecimalNumber decimalNumberWithString:@"29.99"];
+    NSString* numberString = [course.courseID stringValue];
+    NSString* decimalString = [NSString stringWithFormat:@"Course Id = %@", course.courseID];
+    
+    PSCourseManager* courseManager = [[PSCourseManager alloc]init];
+    course.delegate = courseManager;
+    [course addCourseDescription: @"force delegate" withDetails:@""];
+    // abstract "interface" usage
+    id<PSModel> model = (id <PSModel>)course;
+    [model refresh];
+    [model load];
+    [model save];
     return YES;
 }
 							
